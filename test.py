@@ -28,7 +28,7 @@ def arrayToDatabase():
 
 def databaseToArray(n):
 	array = []
-	for item in cur.execute("SELECT * from positions").fetchall()[-n]:
+	for item in cur.execute("SELECT * from positions").fetchall()[n]:
 		array.append(item)
 	nparray = np.array(array,dtype = np.int8).reshape(8,8)
 	return nparray
